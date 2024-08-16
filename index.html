@@ -599,14 +599,17 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="newsletter footer-item">
-            <h4>Subscribe to Our Newsletter</h4>
-            <p>Stay updated with the latest educational resources and courses.</p>
-            <form action="#" method="get">
-              <input type="email" name="email" id="email" placeholder="Your Email" required="">
-              <button type="submit" id="form-submit" class="main-button"><i class="fa fa-paper-plane-o"></i></button>
+          <div class="whatsapp-connect footer-item">
+            <h4>Connect with Us on WhatsApp</h4>
+            <p>Get instant updates and educational resources directly on WhatsApp.</p>
+            <form id="whatsapp-form" method="get">
+              <input type="text" name="whatsapp-message" id="whatsapp-message" placeholder="Your Message" required="true">
+              <button type="submit" id="form-submit" class="main-button">
+                <i class="fa fa-whatsapp"></i> Connect Now
+              </button>
             </form>
           </div>
+          
         </div>
         <div class="col-lg-12">
           <div class="footer-bottom">
@@ -627,6 +630,16 @@
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
 
+  <script>
+    document.getElementById("whatsapp-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      const message = encodeURIComponent(document.getElementById("whatsapp-message").value);
+      const phoneNumber = "919072123488"; // Replace with your WhatsApp number
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+  
   <script>
   // Acc
     $(document).on("click", ".naccs .menu div", function() {
